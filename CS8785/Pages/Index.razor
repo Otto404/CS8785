@@ -1,0 +1,40 @@
+﻿@page "/"
+
+<h3>FormWithEdit</h3>
+
+<AuthorizeView>
+    <EditForm Model="loginModel" OnValidSubmit="HandleValidSubmit" style="max-width:500px;">
+        <div class="mb-3">
+            <label for="email" class="form-label">E-Mail</label>
+        </div>
+        <label for="email" class="form-label">E-Mail</label>
+    </EditForm>
+</AuthorizeView>
+<p>
+    1. add reference for Microsoft.AspNetCore.Components.Authorization
+</p>
+<p>2.  Add "EditForm" - project compiles </p>
+<p>3, Súrround EditForm with "AuthorizeView - does not compile </p>
+<p>
+    1>------ Build started: Project: CS8785, Configuration: Debug Any CPU ------
+1>You are using a preview version of .NET. See: https://aka.ms/dotnet-core-preview
+1>CSC : warning CS8785: Generator 'RazorSourceGenerator' failed to generate source. It will not contribute to the output and compilation errors may occur as a result. Exception was of type 'AggregateException' with message 'One or more errors occurred.'
+1>C:\Users\ottof\source\repos\CS8785\CS8785\Program.cs(18,40,18,43): error CS0246: The type or namespace name 'App' could not be found (are you missing a using directive or an assembly reference?)
+1>Done building project "CS8785.csproj" -- FAILED.
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========
+</p>
+@code {
+    LoginModel loginModel = new LoginModel();
+    string message = string.Empty;
+    bool isDisabled = false;
+
+    private async Task HandleValidSubmit()
+    {
+
+    }
+
+    public class LoginModel
+    {
+        
+    }
+}
