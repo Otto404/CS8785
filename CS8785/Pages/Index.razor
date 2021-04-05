@@ -2,7 +2,7 @@
 
 <h3>FormWithEdit</h3>
 
-<AuthorizeView>
+<AuthorizeView Context="NonAuthContext">
     <EditForm Model="loginModel" OnValidSubmit="HandleValidSubmit" style="max-width:500px;">
         <div class="mb-3">
             <label for="email" class="form-label">E-Mail</label>
